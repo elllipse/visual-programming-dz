@@ -1,11 +1,11 @@
-interface User{
+export interface User{
     id: number;
     name: string;
     email?: string;
     isActive: boolean;
 }
 
-function createUser(id: number, name: string, email: string, isActive: boolean): User{
+export function createUser(id: number, name: string, email: string, isActive: boolean): User{
     const Activity = isActive;
     return{
         id: id,
@@ -21,16 +21,16 @@ console.log('Task1: ', user1);
 var user2 = createUser(2, 'Maria Ivanova', 'maria@gmail.com', false);
 console.log('task 1: ', user2);
 
-type Genre = 'fiction' | 'non-fiction';
+export type Genre = 'fiction' | 'non-fiction';
 
-interface Book{
+export interface Book{
     title: string,
     author : string,
     year?: number,
     genre: Genre;
 }
 
-function createBook(book: Book): Book{
+export function createBook(book: Book): Book{
     return book
 }
 
@@ -52,9 +52,9 @@ console.log('task 2 (no year)', book2);
 
 
 
-function Ploshad(shape: 'circle', radius: number): number;
-function Ploshad(shape: 'square', side: number): number;
-function Ploshad(shape: any, param: number): number{
+export function Ploshad(shape: 'circle', radius: number): number;
+export function Ploshad(shape: 'square', side: number): number;
+export function Ploshad(shape: any, param: number): number{
     if(shape == 'circle'){
         return Math.PI * param * param;
     }else{
@@ -64,9 +64,9 @@ function Ploshad(shape: any, param: number): number{
 console.log('');
 console.log('task 3: ', Ploshad('circle', 7));
 console.log('task 3: ', Ploshad('square', 7));
-type Status = 'active' | 'inactive' | 'new';
+export type Status = 'active' | 'inactive' | 'new';
 
-function Color(status: Status): string{
+export function Color(status: Status): string{
     if(status == 'active'){
         return 'green';
     }else if(status == 'inactive'){
@@ -102,7 +102,7 @@ console.log('task 5: ', PervayBukvaUp('slovo'));
 console.log('task 5: ', Deleteprobel('   slovo   ', false));
 console.log('task 5: ', Deleteprobel('   slovo   ', true));
 
-function FirstEl(arr: any[]): any{
+export function FirstEl(arr: any[]): any{
     if(arr && arr.length > 0){
         return arr[0];
     }
@@ -120,11 +120,11 @@ console.log('task 6: ', FirstEl(strings));
 console.log('task 6: ', FirstEl(empty));
 
 
-interface HashId{
+export interface HashId{
     id : number;
 }
 
-function findId(items: HashId[], id: number): HashId | undefined{
+export function findId(items: HashId[], id: number): HashId | undefined{
     for(var i = 0; i < items.length; i++){
         if(items[i].id == id){
             return items[i];

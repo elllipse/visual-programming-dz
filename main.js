@@ -1,3 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createUser = createUser;
+exports.createBook = createBook;
+exports.Ploshad = Ploshad;
+exports.Color = Color;
+exports.FirstEl = FirstEl;
+exports.findId = findId;
 function createUser(id, name, email, isActive) {
     var Activity = isActive;
     return {
