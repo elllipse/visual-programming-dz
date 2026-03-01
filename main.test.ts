@@ -42,7 +42,7 @@ describe('findId', () => {
         { id: 3, name: 'John' }
     ];
 
-  it('возвращает undefined для несуществующего id', () => {
+  it('undefined id', () => {
         expect(findId(userId, 99)).toBeUndefined();
     });
     });
