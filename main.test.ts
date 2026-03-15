@@ -1,5 +1,5 @@
 import { describe, it, expect} from 'vitest';
-import { createUser, createBook,Ploshad, Color, FirstEl, findId} from './main.ts';
+import { createUser, createBook,Ploshad, Color, FirstEl, findId} from './main';
 
 
 
