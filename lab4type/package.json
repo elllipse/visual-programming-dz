@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "dev" : "tsx main.ts",
     "test": "vitest",
     "test:run": "vitest run"
   },
