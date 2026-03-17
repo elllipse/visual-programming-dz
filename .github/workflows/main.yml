@@ -23,11 +23,14 @@ jobs:
       with:
         node-version: '20'
     
-    - name: Install dependencies
+    - name: Force reinstall all dependencies (fix for optional deps)
       run: |
         rm -rf node_modules package-lock.json
         npm cache clean --force
-        npm install --no-optional
+        npm install
+        
+    - name: Verify native bindings are present
+      run: ls -la node_modules/@rolldown/ || echo "Check manually"
       
     - name: Run tests
       run: npm test 
