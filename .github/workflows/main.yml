@@ -17,32 +17,25 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v3
+      with:
+        version: 8
+        run_install: false
+
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '20'
-    
-    - name: Force clean npm install (fix for optional dependencies bug)
-      run: |
-        echo "Cleaning global npm cache..."
-        rm -rf ~/.npm
-        echo "Removing local node_modules and package-lock.json..."
-        rm -rf node_modules package-lock.json
-        echo "Cleaning npm cache..."
-        npm cache clean --force
-        echo "Installing dependencies from scratch..."
-        npm install
-      
-    - name: Verify native bindings are installed
-      run: |
-        echo "Checking for rollup binary..."
-        ls -la node_modules/@rollup/ || echo "Rollup folder exists"
-        echo "Checking for specific linux binary..."
-        find node_modules -name "*linux-x64-gnu*" -type f || echo "No linux binaries found (this is bad)"
-      
+        cache: 'pnpm'
+        cache-dependency-path: lab1type/pnpm-lock.yaml
+
+    - name: Install dependencies with pnpm
+      run: pnpm install
+
     - name: Run tests
-      run: npm test 
-      
+      run: pnpm test 
+
     - name: Run coverage
-      run: npm run coverage --if-present
+      run: pnpm run coverage --if-present
