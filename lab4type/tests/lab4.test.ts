@@ -16,9 +16,9 @@ const users: User[] = [
   { id: 4, name: "Mike", surname: "Doe", age: 35, city: "LA" },
 ];
 
-describe('TypeScript Pipeline - Lab4', () => {
+describe('Pipeline - Lab4', () => {
   
-  it('фильтрация и сортировка (пример 1 из ТЗ)', () => {
+  it('фильтрация и сортировка', () => {
     const search = query(
       where('name', 'John'),
       where('surname', 'Doe'),
@@ -32,7 +32,7 @@ describe('TypeScript Pipeline - Lab4', () => {
     expect(result[2]).toMatchObject({ id: 3, age: 35 });
   });
 
-  it('группировка и фильтр по группам (пример 2 из ТЗ)', () => {
+  it('группировка и фильтр по группам', () => {
     const groupAndFilter = query(
       groupBy('city'),
       having((group: Group<User, any>) => group.items.length > 1)
@@ -46,7 +46,7 @@ describe('TypeScript Pipeline - Lab4', () => {
     expect(result[1].items).toHaveLength(2);
   });
 
-  it('комбинированный конвейер (пример 3 из ТЗ)', () => {
+  it('комбинированный конвейер', () => {
     const pipeline = query(
       where('surname', 'Doe'),
       groupBy('city'),

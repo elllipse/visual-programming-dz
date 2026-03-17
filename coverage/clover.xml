@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1773654146390" clover="3.2.0">
-  <project timestamp="1773654146390" name="All files">
+<coverage generated="1773733188455" clover="3.2.0">
+  <project timestamp="1773733188455" name="All files">
     <metrics statements="192" coveredstatements="192" conditionals="37" coveredconditionals="36" methods="13" coveredmethods="13" elements="242" coveredelements="241" complexity="0" loc="192" ncloc="192" packages="2" files="2" classes="2"/>
     <package name="visual-programming-dz">
       <metrics statements="144" coveredstatements="144" conditionals="18" coveredconditionals="18" methods="8" coveredmethods="8"/>
