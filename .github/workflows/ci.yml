@@ -2,10 +2,10 @@ name: CI/CD
 
 on:
   push:
-    branches: [ "*" ]      # ЗАПУСКАЕТСЯ НА ЛЮБОЙ ВЕТКЕ!
+    branches: [ "*" ]
   pull_request:
     branches: [ "lab1" ]
-  workflow_dispatch:        # можно запустить ручками
+  workflow_dispatch:
 
 jobs:
   test:
@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'pnpm'
+          cache-dependency-path: lab1type/pnpm-lock.yaml
           
       - name: Install dependencies
         run: pnpm install
