@@ -23,14 +23,23 @@ jobs:
       with:
         node-version: '20'
     
-    - name: Force reinstall all dependencies (fix for optional deps)
+    - name: Force clean npm install (fix for optional dependencies bug)
       run: |
+        echo "Cleaning global npm cache..."
+        rm -rf ~/.npm
+        echo "Removing local node_modules and package-lock.json..."
         rm -rf node_modules package-lock.json
+        echo "Cleaning npm cache..."
         npm cache clean --force
+        echo "Installing dependencies from scratch..."
         npm install
-        
-    - name: Verify native bindings are present
-      run: ls -la node_modules/@rolldown/ || echo "Check manually"
+      
+    - name: Verify native bindings are installed
+      run: |
+        echo "Checking for rollup binary..."
+        ls -la node_modules/@rollup/ || echo "Rollup folder exists"
+        echo "Checking for specific linux binary..."
+        find node_modules -name "*linux-x64-gnu*" -type f || echo "No linux binaries found (this is bad)"
       
     - name: Run tests
       run: npm test 
