@@ -1,12 +1,14 @@
 {
   "scripts": {
-    "dev" : "tsx main.ts",
+    "dev": "tsx main.ts",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "vitest": "^1.6.0",
-    "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
+    "@types/node": "^20.19.37",
+    "@vitest/coverage-v8": "^1.6.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.6.0"
   }
 }
