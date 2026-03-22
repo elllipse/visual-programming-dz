@@ -1,0 +1,39 @@
+name: CI/CD Lab4
+
+on:
+  push:
+    branches: [ "lab4" ]          
+  pull_request:
+    branches: [ "lab4" ]          
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+          cache-dependency-path: lab4type/pnpm-lock.yaml  
+          
+      - name: Install dependencies
+        run: pnpm install
+        working-directory: ./lab4type                    
+        
+      - name: Run tests
+        run: pnpm test
+        working-directory: ./lab4type                   
+        
+      - name: Run coverage
+        run: pnpm coverage
+        working-directory: ./lab4type                   
