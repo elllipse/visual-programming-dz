@@ -11,6 +11,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     
+    defaults:
+      run:
+        working-directory: ./lab8-9
+    
     steps:
       - uses: actions/checkout@v4
       
@@ -24,6 +28,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'pnpm'
+          cache-dependency-path: lab8-9/pnpm-lock.yaml
           
       - name: Install dependencies
         run: pnpm install
