@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.mock-control {
+  text-align: center;
+  margin: 15px 0;
+  padding: 8px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 5px;
+}
+
+.mock-control label {
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.loading, .error {
+  text-align: center;
+  margin-top: 40px;
+  color: white;
+}
+
+.error {
+  color: #ff4444;
+  background: rgba(0,0,0,0.6);
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.search-input {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+  outline: none;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  background: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-btn:hover {
+  background: #e0e0e0;
+}
+
+.weather-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.card-day {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-date {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.weather-icon {
+  width: 60px;
+  height: 60px;
+  margin: 5px auto;
+}
+
+.card-temp {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 8px 0;
+  color: #ff6b35;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: #555;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.card-details {
+  font-size: 11px;
+  color: #777;
+  border-top: 1px solid #ddd;
+  padding-top: 8px;
+}
+
+.card-details span {
+  display: block;
+  margin: 3px 0;
+}
