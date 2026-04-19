@@ -22,3 +22,6 @@ build/
 # Environment
 .env
 .env.local
+
+echo ".DS_Store" >> .gitignore
+echo "**/.DS_Store" >> .gitignore

@@ -13,7 +13,7 @@ describe('WeatherCard', () => {
 
 it('отображает температуру округлённой', () => {
   render(<WeatherCard data={mockData} isFirst={true} />);
-  expect(screen.getByText('23°C')).toBeDefined(); // 22.5 округляется до 23
+  expect(screen.getByText('23°C')).toBeDefined(); 
 });
 
   it('отображает "Сегодня" для первого дня', () => {
